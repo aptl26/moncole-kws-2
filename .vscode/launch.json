@@ -1,26 +1,43 @@
 {
-    // Requires Cortex-Debug plugin for VSCode:
-    // https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug
-    "configurations": [
+  "configurations": [
+    {
+      "cwd": "${workspaceFolder}",
+      "executable": "build/application.elf",
+      "name": "JLink",
+      "request": "launch",
+      "type": "cortex-debug",
+      "device": "nRF52832_xxAA",
+      "showDevDebugOutput": "none",
+      "servertype": "jlink",
+      "svdFile": "nrfx/mdk/nrf52.svd",
+      "preLaunchTask": "Build",
+      "loadFiles": [
+        "softdevice/s132_nrf52_7.3.0_softdevice.hex"
+      ],
+      "preLaunchCommands": [
+        "monitor halt",
+        "monitor speed 2000",
+        "load"
+      ]
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": false,
+      "cwd": "/Users/aghyaddeeb/Documents/Coding/CS249/project/harrison-original",
+      "program": "/Users/aghyaddeeb/Documents/Coding/CS249/project/harrison-original/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "/opt/homebrew/bin/arm-none-eabi-gdb",
+      "setupCommands": [
         {
-            "cwd": "${workspaceFolder}",
-            "executable": "build/application.elf",
-            "name": "JLink",
-            "request": "launch",
-            "type": "cortex-debug",
-            "device": "nRF52832_xxAA",
-            "showDevDebugOutput": "none",
-            "servertype": "jlink",
-            "svdFile": "nrfx/mdk/nrf52.svd",
-            "preLaunchTask": "Build",
-            "loadFiles": [
-                "softdevice/s132_nrf52_7.3.0_softdevice.hex",
-            ],
-            "preLaunchCommands": [
-                "monitor halt",
-                "monitor speed 2000",
-                "load"
-            ],
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
         }
-    ]
+      ]
+    }
+  ]
 }
