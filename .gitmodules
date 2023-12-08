@@ -7,3 +7,6 @@
 [submodule "modules/libvgrs"]
 	path = modules/libvgrs
 	url = https://github.com/sathibault/vgrs.git
+[submodule "monocle-nrf52dk"]
+	path = monocle-nrf52dk
+	url = https://github.com/josuah/monocle-nrf52dk.git
