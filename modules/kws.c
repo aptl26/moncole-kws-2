@@ -1,4 +1,5 @@
 #include "kws.h"
+#include "py/runtime.h"
 
 STATIC MP_DEFINE_CONST_FUN_OBJ_0(run_obj, run);
 
