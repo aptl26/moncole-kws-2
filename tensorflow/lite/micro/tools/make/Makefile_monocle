@@ -630,7 +630,7 @@ SRC_C += nrfx/mdk/system_nrf52.c
 
 SRC_C += modules/experimental.c
 SRC_C += modules/kws.c
-SRC_C += modules/c_microphone.c
+# SRC_C += modules/c_microphone.c
 
 SRC_CXX += modules/helpers/experimental_helper.cc
 SRC_CXX += modules/helpers/kws_helper.cc
@@ -780,6 +780,28 @@ release: build/application.hex
 $(DEPDIR)/%.d: ;
 .PRECIOUS: $(DEPDIR)/%.d
 .PRECIOUS: $(BINDIR)%_test
+
+print_dirs:
+	$(ECHO) "TENSORFLOW_ROOT: "
+	$(ECHO) $(TENSORFLOW_ROOT)
+	$(ECHO) "RELATIVE_MAKEFILE_DIR: "
+	$(ECHO) $(RELATIVE_MAKEFILE_DIR)
+	$(ECHO) "MAKEFILE_DIR: "
+	$(ECHO) $(MAKEFILE_DIR)
+	$(ECHO) "DOWNLOADS_DIR: "
+	$(ECHO) $(DOWNLOADS_DIR)
+
+print_OS:
+	$(ECHO) "HOST_OS: "
+	$(ECHO) $(HOST_OS)
+
+print_MKENV_INCLUDED:
+	$(ECHO) "MKENV_INCLUDED: "
+	$(ECHO) $(MKENV_INCLUDED)
+
+print_TOP:
+	$(ECHO) "TOP: "
+	$(ECHO) $(TOP)
 
 -include $(patsubst %,$(DEPDIR)/%.d,$(basename $(ALL_SRCS)))
 include micropython/py/mkrules.mk
