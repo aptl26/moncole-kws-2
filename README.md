@@ -30,11 +30,7 @@ Explain how to set up and run your project on a local machine.
 
 List any software, libraries, or dependencies that need to be installed before running your project.
 
-```
-Example:
-- Node.js
-- npm
-```
+Ensure that you have the [nRF Command Line Tools](https://www.nordicsemi.com/Products/Development-tools/nrf-command-line-tools) installed
 
 ### Installation
 
