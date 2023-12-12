@@ -32,14 +32,24 @@ List any software, libraries, or dependencies that need to be installed before r
 
 Ensure that you have the [nRF Command Line Tools](https://www.nordicsemi.com/Products/Development-tools/nrf-command-line-tools) installed
 
+Download Brilliant Labs AR Studio to your editor (we used VS Code)
+
 ### Installation
 
 Provide step-by-step instructions on how to install and configure your project.
 
-```bash
-Example:
-npm install
-```
+Before running commands for the nRF52DK board, you'll probably have to unlock the board with the following command:
+  nrfjprog --recover 
+  
+To get the firmware and model flashed to the model:
+  make flash
+
+To open the REPL, do the following:
+CMD + SHIFT + P and click Brilliant AR Studio: Connect
+
+Finally, to run the model, run the following commands in the REPL:
+  import kws
+  kws.run()
 
 ## Usage
 
