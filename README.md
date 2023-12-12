@@ -39,17 +39,21 @@ Download Brilliant Labs AR Studio to your editor (we used VS Code)
 Provide step-by-step instructions on how to install and configure your project.  
 
 Before running commands for the nRF52DK board, you'll probably have to unlock the board with the following command:  
+```bash
   nrfjprog --recover 
-  
+```  
 To get the firmware and model flashed to the model:  
+```bash
   make flash
-
+```
 To open the REPL, do the following:  
 CMD + SHIFT + P and click Brilliant AR Studio: Connect  
 
 Finally, to run the model, run the following commands in the REPL:  
+```bash
   import kws  
-  kws.run()  
+  kws.run()
+```  
 
 ## Usage
 
